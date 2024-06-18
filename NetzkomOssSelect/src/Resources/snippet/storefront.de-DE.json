@@ -1,0 +1,12 @@
+{
+    "netzkom-oss-selector": {
+        "modal": {
+            "header": "Lieferland wählen",
+            "info": "Bitte wählen Sie das Land Ihrer Lieferadresse aus. So sehen Sie alle Preise im Shop direkt in Ihrer Währung und mit Ihrer landestypischen Mehrwertsteuer.",
+            "currency": "Währung",
+            "country": "Land",
+            "button": "Speichern",
+            "language": "Sprache"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<div class="netzkom-oss-selector">
+    {{ sw_csrf('widgets.netzkom.oss-selector.set-context') }}
+    <h2>{{ "netzkom-oss-selector.modal.header"|trans }}</h2>
+    <p>{{ "netzkom-oss-selector.modal.info"|trans|raw }}</p>
+    <div class="row">
+        <div class="col-12 form-group">
+            <select class="form-control country" type="text" id="countryId" name="countryId">
+                {% for country in page.countries %}
+                    {% if country.shippingAvailable %}
+                    <option value="{{ country.id }}"
+                        {% if country.id == context.shippingLocation.country.id %}selected="selected" data-default="true"{% else %}data-default="false"{% endif %}>
+                        {{ country.translated.customFields.custom_language_flag }}&nbsp; {{ country.translated.name }}
+                    </option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="btn btn-primary submit-button">
+            {{ "netzkom-oss-selector.modal.button"|trans }}
+        </button>
+    </div>
+</div>

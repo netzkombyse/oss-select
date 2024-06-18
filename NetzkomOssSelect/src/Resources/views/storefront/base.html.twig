@@ -1,0 +1,13 @@
+
+{# file to extend #}
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{# add our widget url to the router array #}
+{% block base_script_router %}
+    {{ parent() }}
+    <script>
+        window.router['widgets.netzkom.oss-selector.get-status'] = '{{ absolute_url(path('widgets.netzkom.oss-selector.get-status')) }}';
+        window.router['widgets.netzkom.oss-selector.get-modal'] = '{{ absolute_url(path('widgets.netzkom.oss-selector.get-modal')) }}';
+        window.router['widgets.netzkom.oss-selector.set-context'] = '{{ absolute_url(path('widgets.netzkom.oss-selector.set-context')) }}';
+    </script>
+{% endblock %}

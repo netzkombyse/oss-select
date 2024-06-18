@@ -1,0 +1,52 @@
+{% set shippingCountries = getShippingCountries(context) %}
+
+
+    {% for country in shippingCountries %}
+        {% if country.id == context.shippingLocation.country.id %}
+        {% if isCart %}
+            <dt class="col-8 mr-auto summary-label summary-total pr-0">
+                {{ 'customizedProducts.priceDisplay.shippingCosts' | trans }} {{ country.translated.name }}
+            </dt>
+            {% else %}
+            <span class="price-display__label">
+                    {{ 'customizedProducts.priceDisplay.shippingCosts' | trans }} {{ country.translated.name }}
+            </span>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+{% if isCart %}
+    <dd class="col-auto summary-value summary-total summary-value">
+        + {{ activeShipping.shippingCosts.totalPrice|currency }}
+    </dd>
+{% else %}
+<span class="price-display__price">
+    + {{ priceDetails.object.extensions.shippingCosts | currency }}
+</span>
+{% endif %}
+{% if isCart %}
+<dt class="netzkom-oss-selector-open col-auto">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+    <g id="edit">
+        <path fill-rule="evenodd" clip-rule="evenodd" class="netzkom-oss-selector-open"
+              d="M15.1987 4L13.2092 5.98943L17.5913 10.3715L19.5808 8.38209L15.1987 4ZM4 15.2003L11.8334 7.3669L16.2162 11.7496L8.38274 19.583H4V15.2003Z"
+              fill="#E8162E"/>
+    </g>
+</svg>
+{{ 'customizedProducts.priceDisplay.changeShippingCountry'|trans }}
+</dt>
+{% else %}
+<span class="netzkom-oss-selector-open d-block mt-2 mb-3">
+     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+        <g id="edit">
+        <path fill-rule="evenodd" clip-rule="evenodd" class="netzkom-oss-selector-open"
+              d="M15.1987 4L13.2092 5.98943L17.5913 10.3715L19.5808 8.38209L15.1987 4ZM4 15.2003L11.8334 7.3669L16.2162 11.7496L8.38274 19.583H4V15.2003Z"
+              fill="#E8162E"/>
+        </g>
+        </svg>
+    {{ 'customizedProducts.priceDisplay.changeShippingCountry'|trans }}
+</span>
+{% endif %}
+

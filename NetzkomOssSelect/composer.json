@@ -1,0 +1,42 @@
+{
+    "name": "netzkom/oss-select",
+    "description": "Auswahl des Lieferlandes zur Anzeige der landesspezifischen Preise",
+    "version": "1.0.0",
+    "license": "proprietary",
+    "type": "shopware-platform-plugin",
+    "authors": [
+        {
+            "name": "netzkombyse GmbH",
+            "homepage": "https://netzkombyse.de"
+        }
+    ],
+    "require": {
+        "shopware/core": "^6.4.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "Netzkom\\OssSelect\\": "src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "Netzkom\\OssSelect\\NetzkomOssSelect",
+        "copyright": "netzkombyse",
+        "plugin-icon": "src/Resources/plugin.png",
+        "label": {
+            "de-DE": "OSS Select",
+            "en-GB": "OSS Select"
+        },
+        "description": {
+            "de-DE": "Auswahl des Lieferlandes zur Anzeige der landesspezifischen Preise",
+            "en-GB": "Selection of the delivery country to display the country-specific prices"
+        },
+        "manufacturerLink": {
+            "de-DE": "https://netzkombyse.de",
+            "en-GB": "https://netzkombyse.de"
+        },
+        "supportLink": {
+            "de-DE": "https://netzkombyse.de",
+            "en-GB": "https://netzkombyse.de"
+        }
+    }
+}

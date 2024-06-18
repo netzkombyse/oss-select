@@ -1,0 +1,36 @@
+.netzkom-oss-selector {
+    .row {
+        margin-bottom: 20px;
+    }
+
+    .currency-label,
+    .country-label {
+        line-height: 40px;
+    }
+
+    .button-container {
+        text-align: right;
+
+        button {
+            min-width: 150px;
+        }
+    }
+
+}
+.netzkom-oss-selector-modal {
+    .modal-dialog {
+        max-width: 640px;
+        @include media-breakpoint-up(md) {
+            max-width: 348px;
+        }
+        .modal-content{
+            padding-top: 20px;
+        }
+        .modal-header{
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 9;
+        }
+    }
+}

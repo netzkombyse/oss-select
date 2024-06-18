@@ -1,0 +1,11 @@
+{
+    "netzkom-oss-selector": {
+        "modal": {
+            "header": "Select delivery country",
+            "info": "Please select the country of your delivery address. You will then see all prices in the store directly in your currency and with your country-specific VAT.",
+            "currency": "Currency",
+            "country": "Country",
+            "button": "Save"
+        }
+    }
+}
